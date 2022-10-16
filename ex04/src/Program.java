@@ -24,11 +24,6 @@ public class Program {
                     topTen = insertInCharArray(topTen, (char)i, index);
             }
         }
-        for(int i = 0; i < topTen.length; i++){
-            System.out.print(topTen[i] + " ");
-            System.out.print(intArray[topTen[i]] + " ");
-        }
-        System.out.println();
         printStatistic(topTen, intArray);
 
     }
@@ -74,8 +69,6 @@ public class Program {
             temp = ((float)intArray[topTen[i]] / intArray[topTen[0]]) * 10;
             percents[i] = (int)temp;
         }
-        for (int i = 0; i < percents.length; i++)
-            System.out.print(percents[i] + " ");
         for (int i = 12; i > 0; i--){
             for (int j = 0; j < percents.length; j++){
                 if (percents[j] == i - 1 && intArray[topTen[j]] > 0){
@@ -88,15 +81,14 @@ public class Program {
                     System.out.print(" " + "#" + " ");
                 }
                 else{
-                    System.out.println();
                     break;
                 }
             }
-        }
-        if (max == 10)
             System.out.println();
+        }
         System.out.print(' ');
         for (int i = 0; i < topTen.length; i++)
             System.out.print(topTen[i] + "  ");
+        System.out.println();
     }
 }
